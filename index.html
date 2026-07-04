@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Fahad Saleem | Portfolio</title>
+    <link rel="icon" href="coders.jpg.avif">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --section-bg: #f9fafb;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --accent: #6366f1;
+            --accent-soft: #eef2ff;
+            --border: #e5e7eb;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--section-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+        .nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .nav-links a:hover{color: var(--accent);transition: 0.3s;}
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 160px 20px 80px;
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .profile-img-container {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 5px solid white;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+        .hero .title { font-size: 1.3rem; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
+        .hero .tagline { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem; }
+
+        .cta-group {
+    display:flex;
+    gap:1rem;
+    justify-content:center;
+}
+        .btn { padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-secondary { background: var(--accent-soft); color: var(--accent); }
+        .btn:hover{transform: translateY(-3px);opacity: 0.9;}
+        .btn:hover{ transform: translateY(-3px);opacity: 0.9;}
+
+        /* --- SECTIONS --- */
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title {text-align: center;font-size: 2rem;margin-bottom: 3rem;color: var(--text-main);}
+        .content-card { background: var(--section-bg); padding: 3rem; border-radius: 24px; border: 1px solid var(--border); }
+
+        /* --- SKILLS --- */
+        .skills-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));gap: 1.5rem;}
+        .skill-card { background: var(--section-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center; box-shadow: var(--card-shadow); }
+
+        /* --- PROJECTS --- */
+        .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+        .project-card { background: var(--section-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); }
+        .skill-card,.project-card{transition: 0.3s;}
+        .skill-card:hover,
+        .project-card:hover{transform: translateY(-8px);box-shadow: 0 15px 35px rgba(0,0,0,.12);}
+        .skill-card,.project-card{transition: 0.3s;}
+
+.skill-card:hover,.project-card:hover{
+    transform: translateY(-8px);box-shadow: 0 15px 35px rgba(0,0,0,.12);}
+
+        .contact-box { text-align: center; background: var(--accent); color: white; padding: 5rem 2rem; border-radius: 32px; margin-top: 50px; }
+        .btn-white { background: white; color: var(--accent); }
+
+        footer { text-align: center; padding: 4rem 0; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+        body.dark {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        --bg-color: #0f172a;
+        --section-bg: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #cbd5e1;
+        --accent: #818cf8;
+        --accent-soft: #312e81;
+        --border: #334155;
+        }
+        .theme-btn {
+        margin-left: 20px;
+        border: none;
+        background: var(--accent-soft);
+        color: var(--accent);
+        padding: 8px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 18px;
+}
+
+/* Skills + Projects heading text */
+.skill-card h3,
+.project-card h3 {
+    color: var(--text-main);
+}
+
+/* Skills + Projects paragraph text */
+.skill-card p,
+.project-card p {
+    color: var(--text-muted);
+}
+
+.hero h1 {
+    color: var(--text-main);
+}
+
+.hero .title {
+    color: var(--accent);
+}
+
+.hero .tagline {
+    color: var(--text-muted);
+}
+/* ===== Force Dark Mode Text Fix ===== */
+
+body.dark .section-title {
+    color: #ffffff !important;
+}
+
+body.dark #skills .section-title {
+    color: #ffffff !important;
+}
+
+body.dark #projects .section-title {
+    color: #ffffff !important;
+}
+/* ============================= */
+/* Mobile Responsive */
+/* ============================= */
+
+@media (max-width:768px){
+
+    .nav-container{
+        flex-direction:column;
+        gap:10px;
+        padding:15px;
+    }
+
+    .nav-links{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    .nav-links a{
+        margin-left:0;
+    }
+
+    .hero{
+        padding:140px 20px 60px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .hero .title{
+        font-size:1.1rem;
+    }
+
+    .hero .tagline{
+        font-size:1rem;
+    }
+
+    .cta-group{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+        text-align:center;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .content-card{
+        padding:2rem;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-main);">Muhammad Fahad Saleem</div>
+            <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</div>
+    </nav>
+
+    <header class="hero">
+    <div class="profile-img-container">
+        <img src="my-photo.jpg.jpeg" alt="Muhammad Fahad Saleem" onerror="this.src='https://ui-avatars.com/api/?name=Fahad+Saleem&background=6366f1&color=fff&size=160'">
+    </div>
+    <h1>Muhammad Fahad Saleem</h1>
+    <div class="title">Software Engineer | Python & AI Developer</div>
+    <p class="tagline">Passionate about Artificial Intelligence, building intelligent applications, and continuously learning through real-world projects.</p>
+    <div class="cta-group">
+        <a href="mailto:fs4903166@gmail.com" class="btn btn-primary">Contact Me</a>
+        <a href="https://www.linkedin.com/in/muhammad-fahad-saleem-b9788133a" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+        <a href="https://github.com/mfahadsaleem001" target="_blank" class="btn btn-secondary">github Profile</a>
+    </div>
+</header>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="content-card">
+            <p style="font-size: 1.1rem; text-align: center; color: var(--text-muted);">
+                I began my software development journey with backend development, gaining solid experience in Python and Object-Oriented Programming (OOP).
+                 Over time, my curiosity led me toward Artificial Intelligence, where I now focus on learning AI, Machine Learning, and data-driven technologies. Through hands-on projects and my AI internship, I am continuously expanding my knowledge and developing practical solutions. 
+                I am passionate about continuous learning and excited to build intelligent systems that make a real-world impact.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3>Python</h3>
+            <p>Advanced OOP</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>C++</h3>
+            <p>Basics</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Flask</h3>
+            <p>Backend Development</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>SQLite</h3>
+            <p>Relational Database</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Git</h3>
+            <p>Version Control</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>GitHub</h3>
+            <p>Code Collaboration</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>MS Office</h3>
+            <p>Productivity Tools</p>
+        </div>
+    </div>
+</section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3 style="margin-bottom: 10px;">E-Commerce Website</h3>
+                <p style="color: var(--text-muted);">Designed and developed the backend of an E-Commerce platform, enabling product management, cart operations, and payment flow while ensuring efficient data handling and business logic.</p>
+            </div>
+            <div class="project-card">
+                <h3 style="margin-bottom: 10px;">AI Auto Reply ChatBot</h3>
+                <p style="color: var(--text-muted);">Built an AI Auto Reply Bot using browser automation that interacts with WhatsApp Web, reads chat messages, generates intelligent responses based on conversation context, and automatically sends replies.</p>
+            </div>
+            <div class="project-card">
+                <h3 style="margin-bottom: 10px;">Weather Tracking System</h3>
+                <p style="color: var(--text-muted);">Built a Weather Tracking System using DSA to manage weather records, calculate max/min/average temperatures, track humidity, and display analytical results with dates.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box">
+            <h2 style="color: white; margin-bottom: 10px;">Let's Work Together</h2>
+            <p style="margin-bottom: 30px;">Open to Internship and Junior Python Developer roles.</p>
+            <a href="mailto:fs4903166@gmail.com" class="btn btn-white">Email Me Directly</a>
+            <a href="https://wa.me/9203349566487?text=Hi%20Fahad,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+            target="_blank"class="btn btn-white"style="margin-top:15px;">Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+    <p>© <span id="year"></span> Muhammad Fahad Saleem. All Rights Reserved.</p>
+</footer>
+<script>
+const toggle = document.getElementById("themeToggle");
+
+if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    toggle.innerHTML="☀️";
+}
+
+toggle.addEventListener("click",function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        toggle.innerHTML="☀️";
+        localStorage.setItem("theme","dark");
+    }
+    else{
+        toggle.innerHTML="🌙";
+        localStorage.setItem("theme","light");
+    }
+
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
