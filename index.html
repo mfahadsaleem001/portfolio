@@ -1,395 +1,3235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Fahad Saleem | Portfolio</title>
-    <link rel="icon" href="coders.jpg.avif">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Muhammad Fahad Saleem | AI & Python Developer
+    </title>
+
+    <meta
+        name="description"
+        content="Portfolio of Muhammad Fahad Saleem, AI & Python Developer and Software Engineering Student."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
     <style>
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
         :root {
-            --bg-color: #ffffff;
-            --section-bg: #f9fafb;
-            --text-main: #111827;
-            --text-muted: #4b5563;
-            --accent: #6366f1;
-            --accent-soft: #eef2ff;
-            --border: #e5e7eb;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+
+            --bg: #f6f8fb;
+
+            --surface: #ffffff;
+
+            --surface-soft: #f1f5f9;
+
+            --text: #111827;
+
+            --muted: #64748b;
+
+            --border: #e2e8f0;
+
+            --primary: #2563eb;
+
+            --primary-light: #60a5fa;
+
+            --primary-dark: #1d4ed8;
+
+            --success: #22c55e;
+
+            --shadow:
+                0 18px 50px rgba(15, 23, 42, 0.08);
+
+            --shadow-hover:
+                0 25px 65px rgba(37, 99, 235, 0.15);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        body {
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: var(--section-bg);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    border-bottom: 1px solid var(--border);
-}
-
-        .nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            margin-left: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        .nav-links a:hover{color: var(--accent);transition: 0.3s;}
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 160px 20px 80px;
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .profile-img-container {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            border: 5px solid white;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-            background: #f3f4f6;
-        }
-
-        .profile-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: -1px;
-}
-        .hero .title { font-size: 1.3rem; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
-        .hero .tagline { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem; }
-
-        .cta-group {
-    display:flex;
-    gap:1rem;
-    justify-content:center;
-}
-        .btn { padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-        .btn-primary { background: var(--accent); color: white; }
-        .btn-secondary { background: var(--accent-soft); color: var(--accent); }
-        .btn:hover{transform: translateY(-3px);opacity: 0.9;}
-        .btn:hover{ transform: translateY(-3px);opacity: 0.9;}
-
-        /* --- SECTIONS --- */
-        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-title {text-align: center;font-size: 2rem;margin-bottom: 3rem;color: var(--text-main);}
-        .content-card { background: var(--section-bg); padding: 3rem; border-radius: 24px; border: 1px solid var(--border); }
-
-        /* --- SKILLS --- */
-        .skills-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));gap: 1.5rem;}
-        .skill-card { background: var(--section-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); text-align: center; box-shadow: var(--card-shadow); }
-
-        /* --- PROJECTS --- */
-        .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-        .project-card { background: var(--section-bg); padding: 2rem; border-radius: 20px; border: 1px solid var(--border); }
-        .skill-card,.project-card{transition: 0.3s;}
-        .skill-card:hover,
-        .project-card:hover{transform: translateY(-8px);box-shadow: 0 15px 35px rgba(0,0,0,.12);}
-        .skill-card,.project-card{transition: 0.3s;}
-
-.skill-card:hover,.project-card:hover{
-    transform: translateY(-8px);box-shadow: 0 15px 35px rgba(0,0,0,.12);}
-
-        .contact-box { text-align: center; background: var(--accent); color: white; padding: 5rem 2rem; border-radius: 32px; margin-top: 50px; }
-        .btn-white { background: white; color: var(--accent); }
-
-        footer { text-align: center; padding: 4rem 0; color: var(--text-muted); border-top: 1px solid var(--border); }
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
 
         body.dark {
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        --bg-color: #0f172a;
-        --section-bg: #1e293b;
-        --text-main: #f8fafc;
-        --text-muted: #cbd5e1;
-        --accent: #818cf8;
-        --accent-soft: #312e81;
-        --border: #334155;
+
+            --bg: #080d18;
+
+            --surface: #101827;
+
+            --surface-soft: #172235;
+
+            --text: #f8fafc;
+
+            --muted: #94a3b8;
+
+            --border: #263247;
+
+            --primary: #60a5fa;
+
+            --primary-light: #93c5fd;
+
+            --primary-dark: #3b82f6;
+
+            --shadow:
+                0 18px 55px rgba(0, 0, 0, 0.32);
+
+            --shadow-hover:
+                0 25px 70px rgba(37, 99, 235, 0.17);
         }
-        .theme-btn {
-        margin-left: 20px;
-        border: none;
-        background: var(--accent-soft);
-        color: var(--accent);
-        padding: 8px 14px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 18px;
-}
 
-/* Skills + Projects heading text */
-.skill-card h3,
-.project-card h3 {
-    color: var(--text-main);
-}
 
-/* Skills + Projects paragraph text */
-.skill-card p,
-.project-card p {
-    color: var(--text-muted);
-}
+        /* =====================================================
+           RESET
+        ===================================================== */
 
-.hero h1 {
-    color: var(--text-main);
-}
+        * {
 
-.hero .title {
-    color: var(--accent);
-}
+            margin: 0;
 
-.hero .tagline {
-    color: var(--text-muted);
-}
-/* ===== Force Dark Mode Text Fix ===== */
+            padding: 0;
 
-body.dark .section-title {
-    color: #ffffff !important;
-}
+            box-sizing: border-box;
 
-body.dark #skills .section-title {
-    color: #ffffff !important;
-}
+            scroll-behavior: smooth;
+        }
 
-body.dark #projects .section-title {
-    color: #ffffff !important;
-}
-/* ============================= */
-/* Mobile Responsive */
-/* ============================= */
 
-@media (max-width:768px){
+        html {
 
-    .nav-container{
-        flex-direction:column;
-        gap:10px;
-        padding:15px;
-    }
+            scroll-behavior: smooth;
+        }
 
-    .nav-links{
-        display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:12px;
-    }
 
-    .nav-links a{
-        margin-left:0;
-    }
+        body {
 
-    .hero{
-        padding:140px 20px 60px;
-    }
+            font-family: "Inter", sans-serif;
 
-    .hero h1{
-        font-size:2rem;
-    }
+            background: var(--bg);
 
-    .hero .title{
-        font-size:1.1rem;
-    }
+            color: var(--text);
 
-    .hero .tagline{
-        font-size:1rem;
-    }
+            line-height: 1.7;
 
-    .cta-group{
-        flex-direction:column;
-        align-items:center;
-    }
+            overflow-x: hidden;
 
-    .btn{
-        width:100%;
-        max-width:280px;
-        text-align:center;
-    }
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
+        }
 
-    .skills-grid{
-        grid-template-columns:1fr;
-    }
 
-    .project-grid{
-        grid-template-columns:1fr;
-    }
+        a {
 
-    .content-card{
-        padding:2rem;
-    }
+            color: inherit;
 
-}
+            text-decoration: none;
+        }
+
+
+        img {
+
+            max-width: 100%;
+
+            display: block;
+        }
+
+
+        button {
+
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 430px;
+
+            height: 430px;
+
+            top: -220px;
+
+            left: -180px;
+
+            border-radius: 50%;
+
+            background: #2563eb;
+
+            filter: blur(130px);
+
+            opacity: 0.07;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            width: 430px;
+
+            height: 430px;
+
+            right: -220px;
+
+            bottom: -220px;
+
+            border-radius: 50%;
+
+            background: #38bdf8;
+
+            filter: blur(130px);
+
+            opacity: 0.06;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            border-bottom: 1px solid var(--border);
+
+            background: rgba(255, 255, 255, 0.86);
+
+            backdrop-filter: blur(16px);
+
+            transition:
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        body.dark nav {
+
+            background: rgba(8, 13, 24, 0.90);
+        }
+
+
+        .nav-container {
+
+            width: min(1100px, 92%);
+
+            min-height: 72px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        /* FULL NAME LOGO */
+
+        .logo {
+
+            color: var(--primary);
+
+            font-size: 1.18rem;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+
+            white-space: nowrap;
+
+            transition:
+                transform 0.25s ease,
+                color 0.25s ease;
+        }
+
+
+        .logo:hover {
+
+            transform: translateY(-2px);
+
+            color: var(--primary-light);
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 23px;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            color: var(--muted);
+
+            font-size: 0.86rem;
+
+            font-weight: 600;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            border-radius: 5px;
+
+            background: var(--primary);
+
+            transition: width 0.3s ease;
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--primary);
+
+            transform: translateY(-1px);
+        }
+
+
+        .nav-links a:hover::after {
+
+            width: 100%;
+        }
+
+
+        .nav-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+        }
+
+
+        .theme-toggle,
+        .menu-toggle {
+
+            width: 40px;
+
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            background: var(--surface);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease;
+        }
+
+
+        .theme-toggle:hover,
+        .menu-toggle:hover {
+
+            transform:
+                translateY(-2px)
+                rotate(4deg);
+
+            border-color: var(--primary);
+
+            color: var(--primary);
+        }
+
+
+        .theme-icon {
+
+            width: 18px;
+
+            height: 18px;
+
+            fill: none;
+
+            stroke: currentColor;
+
+            stroke-width: 2;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+        }
+
+
+        .menu-toggle {
+
+            display: none;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        section {
+
+            width: min(1100px, 92%);
+
+            margin: auto;
+
+            padding: 70px 0;
+        }
+
+
+        .section-heading {
+
+            margin-bottom: 36px;
+        }
+
+
+        .section-label {
+
+            display: inline-block;
+
+            margin-bottom: 8px;
+
+            color: var(--primary);
+
+            font-size: 0.74rem;
+
+            font-weight: 800;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: clamp(1.8rem, 4vw, 2.45rem);
+
+            line-height: 1.2;
+
+            letter-spacing: -1.2px;
+        }
+
+
+        .section-heading p {
+
+            max-width: 670px;
+
+            margin-top: 11px;
+
+            color: var(--muted);
+
+            font-size: 0.93rem;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            padding-top: 125px;
+
+            display: grid;
+
+            grid-template-columns: 1.2fr 0.8fr;
+
+            align-items: center;
+
+            gap: 65px;
+        }
+
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 7px 13px;
+
+            margin-bottom: 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 999px;
+
+            background: var(--surface);
+
+            color: var(--muted);
+
+            font-size: 0.77rem;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 8px 25px rgba(15, 23, 42, 0.04);
+
+            animation:
+                fadeUp 0.8s ease both;
+        }
+
+
+        .status-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--success);
+
+            box-shadow:
+                0 0 0 4px rgba(34, 197, 94, 0.12);
+
+            animation:
+                pulse 2s infinite;
+        }
+
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+
+                box-shadow:
+                    0 0 0 4px rgba(34, 197, 94, 0.12);
+            }
+
+            50% {
+
+                box-shadow:
+                    0 0 0 8px rgba(34, 197, 94, 0.04);
+            }
+        }
+
+
+        .hero h1 {
+
+            max-width: 780px;
+
+            font-size: clamp(2.6rem, 6vw, 4.7rem);
+
+            line-height: 1.04;
+
+            letter-spacing: -3.2px;
+
+            margin-bottom: 20px;
+
+            animation:
+                fadeUp 0.8s 0.08s ease both;
+        }
+
+
+        /* FULL NAME BLUE */
+
+        .name-highlight {
+
+            color: var(--primary);
+
+            transition:
+                color 0.3s ease;
+        }
+
+
+        .hero h2 {
+
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+
+            font-weight: 600;
+
+            color: var(--muted);
+
+            margin-bottom: 17px;
+
+            animation:
+                fadeUp 0.8s 0.16s ease both;
+        }
+
+
+        .hero-description {
+
+            max-width: 650px;
+
+            color: var(--muted);
+
+            font-size: 0.97rem;
+
+            margin-bottom: 29px;
+
+            animation:
+                fadeUp 0.8s 0.24s ease both;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .hero-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 11px;
+
+            animation:
+                fadeUp 0.8s 0.32s ease both;
+        }
+
+
+        .btn {
+
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 46px;
+
+            padding: 0 19px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            border-radius: 10px;
+
+            font-size: 0.87rem;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        /* Button shine */
+
+        .btn::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -120%;
+
+            width: 70%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.22),
+                    transparent
+                );
+
+            transform: skewX(-20deg);
+
+            transition: left 0.6s ease;
+        }
+
+
+        .btn:hover::before {
+
+            left: 140%;
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+        }
+
+
+        .btn:active {
+
+            transform: translateY(0) scale(0.98);
+        }
+
+
+        .btn-primary {
+
+            color: #ffffff;
+
+            background: var(--primary);
+
+            box-shadow:
+                0 12px 28px rgba(37, 99, 235, 0.20);
+        }
+
+
+        .btn-primary:hover {
+
+            background: var(--primary-dark);
+
+            box-shadow:
+                0 16px 35px rgba(37, 99, 235, 0.28);
+        }
+
+
+        .btn-secondary {
+
+            color: var(--text);
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+        }
+
+
+        .btn-secondary:hover {
+
+            color: var(--primary);
+
+            border-color: var(--primary);
+
+            box-shadow:
+                0 10px 25px rgba(37, 99, 235, 0.08);
+        }
+
+
+        /* =====================================================
+           HERO IMAGE
+        ===================================================== */
+
+        .hero-image-wrapper {
+
+            display: flex;
+
+            justify-content: center;
+
+            animation:
+                fadeIn 1s 0.2s ease both;
+        }
+
+
+        .hero-image-card {
+
+            position: relative;
+
+            width: min(330px, 78vw);
+
+            aspect-ratio: 1 / 1;
+
+            padding: 11px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 24px;
+
+            background: var(--surface);
+
+            box-shadow: var(--shadow);
+
+            animation:
+                floating 5s ease-in-out infinite;
+
+            transition:
+                box-shadow 0.4s ease,
+                transform 0.4s ease;
+        }
+
+
+        .hero-image-card:hover {
+
+            box-shadow: var(--shadow-hover);
+        }
+
+
+        .hero-image-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -8px;
+
+            border: 1px solid rgba(37, 99, 235, 0.14);
+
+            border-radius: 29px;
+
+            z-index: -1;
+
+            transition:
+                transform 0.5s ease,
+                border-color 0.5s ease;
+        }
+
+
+        .hero-image-card:hover::before {
+
+            transform: scale(1.04);
+
+            border-color:
+                rgba(37, 99, 235, 0.30);
+        }
+
+
+        .hero-image-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 17px;
+        }
+
+
+        @keyframes floating {
+
+            0%,
+            100% {
+
+                transform: translateY(0);
+            }
+
+            50% {
+
+                transform: translateY(-10px);
+            }
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(22px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+            }
+
+            to {
+
+                opacity: 1;
+            }
+        }
+
+
+        /* =====================================================
+           CARD BASE
+        ===================================================== */
+
+        .info-card,
+        .skill-card,
+        .project-card,
+        .cert-card,
+        .contact-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform 0.35s cubic-bezier(.2,.8,.2,1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+
+        .info-card::before,
+        .skill-card::before,
+        .project-card::before,
+        .cert-card::before,
+        .contact-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -120%;
+
+            width: 70%;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--primary),
+                    transparent
+                );
+
+            transition:
+                left 0.65s ease;
+        }
+
+
+        .info-card:hover::before,
+        .skill-card:hover::before,
+        .project-card:hover::before,
+        .cert-card:hover::before,
+        .contact-card:hover::before {
+
+            left: 130%;
+        }
+
+
+        .info-card:hover,
+        .skill-card:hover,
+        .project-card:hover,
+        .cert-card:hover,
+        .contact-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(37, 99, 235, 0.38);
+
+            box-shadow: var(--shadow-hover);
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .info-card {
+
+            padding: 27px;
+
+            border-radius: 16px;
+        }
+
+
+        .info-card h3 {
+
+            margin-bottom: 11px;
+
+            font-size: 1.05rem;
+        }
+
+
+        .info-card p {
+
+            color: var(--muted);
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 17px;
+        }
+
+
+        .skill-card {
+
+            padding: 23px;
+
+            border-radius: 15px;
+        }
+
+
+        .skill-card h3 {
+
+            font-size: 0.98rem;
+
+            margin-bottom: 10px;
+
+            transition:
+                color 0.25s ease;
+        }
+
+
+        .skill-card:hover h3 {
+
+            color: var(--primary);
+        }
+
+
+        .skill-card p {
+
+            color: var(--muted);
+
+            font-size: 0.84rem;
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ===================================================== */
+
+        .timeline {
+
+            position: relative;
+
+            margin-left: 10px;
+
+            padding-left: 31px;
+
+            border-left: 1px solid var(--border);
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            margin-bottom: 34px;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .timeline-item:hover {
+
+            transform: translateX(4px);
+        }
+
+
+        .timeline-item:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        .timeline-item::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: -37px;
+
+            top: 7px;
+
+            width: 11px;
+
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: var(--primary);
+
+            box-shadow:
+                0 0 0 5px var(--bg);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .timeline-item:hover::before {
+
+            transform: scale(1.35);
+
+            box-shadow:
+                0 0 0 6px var(--bg),
+                0 0 18px rgba(37, 99, 235, 0.35);
+        }
+
+
+        .timeline-date {
+
+            color: var(--primary);
+
+            font-size: 0.79rem;
+
+            font-weight: 700;
+
+            margin-bottom: 4px;
+        }
+
+
+        .timeline-item h3 {
+
+            font-size: 1.08rem;
+
+            margin-bottom: 3px;
+        }
+
+
+        .timeline-company {
+
+            color: var(--muted);
+
+            font-size: 0.86rem;
+
+            margin-bottom: 9px;
+        }
+
+
+        .timeline-item p {
+
+            max-width: 760px;
+
+            color: var(--muted);
+
+            font-size: 0.87rem;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 19px;
+        }
+
+
+        .project-card {
+
+            min-height: 315px;
+
+            padding: 27px;
+
+            border-radius: 17px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            isolation: isolate;
+
+            transform-style: preserve-3d;
+        }
+
+
+        /* Animated corner */
+
+        .project-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 90px;
+
+            height: 90px;
+
+            right: -45px;
+
+            top: -45px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(37, 99, 235, 0.14);
+
+            transition:
+                transform 0.5s ease,
+                border-color 0.5s ease;
+        }
+
+
+        .project-card:hover::after {
+
+            transform: scale(2.3);
+
+            border-color:
+                rgba(37, 99, 235, 0.25);
+        }
+
+
+        .project-number {
+
+            color: var(--primary);
+
+            font-size: 0.73rem;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .project-card h3 {
+
+            font-size: 1.08rem;
+
+            line-height: 1.4;
+
+            margin-bottom: 10px;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .project-card:hover h3 {
+
+            color: var(--primary);
+
+            transform: translateX(2px);
+        }
+
+
+        .project-card p {
+
+            color: var(--muted);
+
+            font-size: 0.84rem;
+
+            line-height: 1.7;
+
+            margin-bottom: 17px;
+        }
+
+
+        .project-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .project-tags span {
+
+            padding: 5px 9px;
+
+            border-radius: 7px;
+
+            background: var(--surface-soft);
+
+            color: var(--muted);
+
+            font-size: 0.69rem;
+
+            font-weight: 600;
+
+            transition:
+                transform 0.25s ease,
+                color 0.25s ease,
+                background 0.25s ease;
+        }
+
+
+        .project-card:hover .project-tags span {
+
+            transform: translateY(-2px);
+        }
+
+
+        .project-tags span:hover {
+
+            color: var(--primary);
+
+            background:
+                rgba(37, 99, 235, 0.10);
+        }
+
+
+        .project-link {
+
+            position: relative;
+
+            width: fit-content;
+
+            margin-top: auto;
+
+            color: var(--primary);
+
+            font-size: 0.82rem;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.3s ease,
+                color 0.25s ease;
+        }
+
+
+        .project-link::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -4px;
+
+            width: 0;
+
+            height: 2px;
+
+            border-radius: 5px;
+
+            background: var(--primary);
+
+            transition:
+                width 0.3s ease;
+        }
+
+
+        .project-link:hover {
+
+            transform: translateX(5px);
+
+            color: var(--primary-light);
+        }
+
+
+        .project-link:hover::after {
+
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           CERTIFICATIONS
+        ===================================================== */
+
+        .cert-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 17px;
+        }
+
+
+        .cert-card {
+
+            padding: 23px;
+
+            border-radius: 15px;
+        }
+
+
+        .cert-card span {
+
+            display: block;
+
+            color: var(--primary);
+
+            font-size: 0.72rem;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+
+        .cert-card h3 {
+
+            font-size: 0.91rem;
+
+            line-height: 1.55;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-container {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .contact-card {
+
+            padding: 27px;
+
+            border-radius: 16px;
+        }
+
+
+        .contact-card h3 {
+
+            font-size: 1.05rem;
+
+            margin-bottom: 9px;
+        }
+
+
+        .contact-card > p {
+
+            color: var(--muted);
+
+            font-size: 0.87rem;
+
+            margin-bottom: 19px;
+        }
+
+
+        .contact-list {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        .contact-link {
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 11px 13px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            color: var(--muted);
+
+            font-size: 0.83rem;
+
+            font-weight: 600;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease,
+                background 0.3s ease;
+        }
+
+
+        .contact-link::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: -100%;
+
+            top: 0;
+
+            width: 55%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,0.12),
+                    transparent
+                );
+
+            transition:
+                left 0.55s ease;
+        }
+
+
+        .contact-link:hover::before {
+
+            left: 130%;
+        }
+
+
+        .contact-link:hover {
+
+            color: var(--primary);
+
+            border-color: var(--primary);
+
+            background: var(--surface-soft);
+
+            transform: translateX(5px);
+        }
+
+
+        .contact-icon {
+
+            width: 19px;
+
+            text-align: center;
+
+            color: var(--primary);
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            width: min(1100px, 92%);
+
+            margin: auto;
+
+            padding: 29px 0;
+
+            border-top: 1px solid var(--border);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            color: var(--muted);
+
+            font-size: 0.78rem;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 18px;
+        }
+
+
+        .footer-links a {
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .footer-links a:hover {
+
+            color: var(--primary);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(28px);
+
+            transition:
+                opacity 0.75s ease,
+                transform 0.75s cubic-bezier(.2,.8,.2,1);
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+
+                gap: 16px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 0.8rem;
+            }
+
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 45px;
+            }
+
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+
+
+            .about-grid,
+            .contact-container {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .skills-grid,
+            .cert-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 760px) {
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 72px;
+
+                left: 4%;
+
+                width: 92%;
+
+                padding: 18px;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+
+                background: var(--surface);
+
+                border: 1px solid var(--border);
+
+                border-radius: 14px;
+
+                box-shadow: var(--shadow);
+
+                animation:
+                    menuOpen 0.25s ease;
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .menu-toggle {
+
+                display: flex;
+            }
+
+
+            @keyframes menuOpen {
+
+                from {
+
+                    opacity: 0;
+
+                    transform: translateY(-8px);
+                }
+
+                to {
+
+                    opacity: 1;
+
+                    transform: translateY(0);
+                }
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            section {
+
+                padding: 55px 0;
+            }
+
+
+            .hero {
+
+                padding-top: 110px;
+            }
+
+
+            .hero h1 {
+
+                font-size: clamp(2.3rem, 11vw, 3.5rem);
+
+                letter-spacing: -2px;
+            }
+
+
+            .skills-grid,
+            .projects-grid,
+            .cert-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero-image-card {
+
+                width: min(290px, 78vw);
+            }
+
+
+            .project-card {
+
+                min-height: auto;
+            }
+
+
+            footer {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .footer-links {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: 0.01ms !important;
+
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
+
 </head>
-<body>
+
+
+<body class="dark">
+
+
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
 
     <nav>
-        <div class="nav-container">
-            <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-main);">Muhammad Fahad Saleem</div>
-            <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
 
-    <button id="themeToggle" class="theme-btn">🌙</button>
-</div>
+        <div class="nav-container">
+
+
+            <!-- FULL NAME -->
+
+            <a
+                href="#home"
+                class="logo"
+            >
+                Muhammad Fahad Saleem
+            </a>
+
+
+            <div
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#skills">
+                    Skills
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#certifications">
+                    Certifications
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="nav-actions">
+
+
+                <!-- DARK MODE -->
+
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle light/dark mode"
+                >
+
+                    <svg
+                        class="theme-icon"
+                        id="themeIcon"
+                        viewBox="0 0 24 24"
+                    >
+
+                    </svg>
+
+                </button>
+
+
+                <!-- MOBILE MENU -->
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open menu"
+                >
+
+                    <svg
+                        class="theme-icon"
+                        viewBox="0 0 24 24"
+                    >
+
+                        <line
+                            x1="4"
+                            y1="6"
+                            x2="20"
+                            y2="6"
+                        ></line>
+
+                        <line
+                            x1="4"
+                            y1="12"
+                            x2="20"
+                            y2="12"
+                        ></line>
+
+                        <line
+                            x1="4"
+                            y1="18"
+                            x2="20"
+                            y2="18"
+                        ></line>
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
     </nav>
 
-    <header class="hero">
-    <div class="profile-img-container">
-        <img src="my-photo.jpg.jpeg" alt="Muhammad Fahad Saleem" onerror="this.src='https://ui-avatars.com/api/?name=Fahad+Saleem&background=6366f1&color=fff&size=160'">
-    </div>
-    <h1>Muhammad Fahad Saleem</h1>
-    <div class="title">Software Engineer | Python & AI Developer</div>
-    <p class="tagline">Passionate about Artificial Intelligence, building intelligent applications, and continuously learning through real-world projects.</p>
-    <div class="cta-group">
-        <a href="mailto:fs4903166@gmail.com" class="btn btn-primary">Contact Me</a>
-        <a href="https://www.linkedin.com/in/muhammad-fahad-saleem-b9788133a" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
-        <a href="https://github.com/mfahadsaleem001" target="_blank" class="btn btn-secondary">github Profile</a>
-    </div>
-</header>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="content-card">
-            <p style="font-size: 1.1rem; text-align: center; color: var(--text-muted);">
-                I began my software development journey with backend development, gaining solid experience in Python and Object-Oriented Programming (OOP).
-                 Over time, my curiosity led me toward Artificial Intelligence, where I now focus on learning AI, Machine Learning, and data-driven technologies. Through hands-on projects and my AI internship, I am continuously expanding my knowledge and developing practical solutions. 
-                I am passionate about continuous learning and excited to build intelligent systems that make a real-world impact.
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+        class="hero"
+        id="home"
+    >
+
+        <div>
+
+
+            <div class="hero-badge">
+
+                <span class="status-dot"></span>
+
+                Open to Internship & Junior Opportunities
+
+            </div>
+
+
+            <h1>
+
+                <span class="name-highlight">
+                    Muhammad Fahad Saleem
+                </span>
+
+            </h1>
+
+
+            <h2>
+
+                AI & Python Developer |
+                Software Engineering Student
+
+            </h2>
+
+
+            <p class="hero-description">
+
+                I build practical AI, machine learning, backend,
+                and full-stack solutions using Python and modern
+                development technologies, with a focus on creating
+                reliable and real-world software systems.
+
             </p>
-        </div>
-    </section>
 
-    <section id="skills">
-        
-    <h2 class="section-title">Technical Expertise</h2>
-    <div class="skills-grid">
-        <div class="skill-card">
-            <h3>Python</h3>
-            <p>Advanced OOP</p>
-        </div>
 
-        <div class="skill-card">
-            <h3>C++</h3>
-            <p>Basics</p>
-        </div>
+            <div class="hero-buttons">
 
-        <div class="skill-card">
-            <h3>Flask</h3>
-            <p>Backend Development</p>
-        </div>
 
-        <div class="skill-card">
-            <h3>SQLite</h3>
-            <p>Relational Database</p>
-        </div>
+                <!-- DOWNLOAD CV -->
 
-        <div class="skill-card">
-            <h3>Git</h3>
-            <p>Version Control</p>
-        </div>
+                <a
+                    href="./Muhammad_Fahad_Saleem_CV.pdf.pdf"
+                    class="btn btn-primary"
+                    download="Muhammad_Fahad_Saleem_CV.pdf"
+                >
 
-        <div class="skill-card">
-            <h3>GitHub</h3>
-            <p>Code Collaboration</p>
-        </div>
+                    ↓ Download CV
 
-        <div class="skill-card">
-            <h3>MS Office</h3>
-            <p>Productivity Tools</p>
-        </div>
-    </div>
-</section>
+                </a>
 
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3 style="margin-bottom: 10px;">E-Commerce Website</h3>
-                <p style="color: var(--text-muted);">Designed and developed the backend of an E-Commerce platform, enabling product management, cart operations, and payment flow while ensuring efficient data handling and business logic.</p>
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:mfahadsaleem001@gmail.com"
+                    class="btn btn-secondary"
+                >
+
+                    Email Me
+
+                </a>
+
+
+                <!-- GITHUB -->
+
+                <a
+                    href="https://github.com/mfahadsaleem001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+
+                    GitHub
+
+                </a>
+
             </div>
-            <div class="project-card">
-                <h3 style="margin-bottom: 10px;">AI Auto Reply ChatBot</h3>
-                <p style="color: var(--text-muted);">Built an AI Auto Reply Bot using browser automation that interacts with WhatsApp Web, reads chat messages, generates intelligent responses based on conversation context, and automatically sends replies.</p>
-            </div>
-            <div class="project-card">
-                <h3 style="margin-bottom: 10px;">Weather Tracking System</h3>
-                <p style="color: var(--text-muted);">Built a Weather Tracking System using Python, Tkinter, and WeatherAPI to fetch real-time weather data by city. Implemented DSA concepts using Lists and Dictionaries for record management, with features including live weather search, add/delete records, and maximum, minimum, and average temperature analysis.</p>
+
         </div>
+
+
+        <div class="hero-image-wrapper">
+
+            <div class="hero-image-card">
+
+                <img
+                    src="my-photo.jpg.jpeg"
+                    alt="Muhammad Fahad Saleem"
+                >
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section id="contact">
-        <div class="contact-box">
-            <h2 style="color: white; margin-bottom: 10px;">Let's Work Together</h2>
-            <p style="margin-bottom: 30px;">Open to Internship and Junior Python Developer roles.</p>
-            <a href="mailto:fs4903166@gmail.com" class="btn btn-white">Email Me Directly</a>
-            <a href="https://wa.me/9203349566487?text=Hi%20Fahad,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
-            target="_blank"class="btn btn-white"style="margin-top:15px;">Chat on WhatsApp</a>
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section
+        id="about"
+        class="reveal"
+    >
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                About Me
+            </span>
+
+            <h2>
+                Building software with an AI-first mindset.
+            </h2>
+
+            <p>
+                I am a BS Software Engineering student focused
+                on AI, Python development, machine learning,
+                backend engineering, and full-stack development.
+            </p>
+
         </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="info-card">
+
+                <h3>
+                    What I Do
+                </h3>
+
+                <p>
+                    I work on AI, machine learning, NLP, backend
+                    APIs, automation, databases, web applications,
+                    and full-stack software projects.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    My Approach
+                </h3>
+
+                <p>
+                    I focus on understanding how systems work,
+                    building practical solutions, and turning
+                    technical concepts into usable software.
+                </p>
+
+            </div>
+
+
+        </div>
+
     </section>
+
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section
+        id="skills"
+        class="reveal"
+    >
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Technical Skills
+            </span>
+
+            <h2>
+                Tools I work with.
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+                    Python, C++
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Frontend
+                </h3>
+
+                <p>
+                    HTML5, CSS3, JavaScript
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Backend
+                </h3>
+
+                <p>
+                    Flask, FastAPI
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    AI / Machine Learning
+                </h3>
+
+                <p>
+                    NumPy, Pandas, Scikit-learn,
+                    NLTK, Hugging Face,
+                    TensorFlow, PyTorch
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Databases
+                </h3>
+
+                <p>
+                    SQL, PostgreSQL, SQLite
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    DevOps & Automation
+                </h3>
+
+                <p>
+                    Git, GitHub, Docker,
+                    Apache Airflow
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EXPERIENCE
+    ===================================================== -->
+
+    <section
+        id="experience"
+        class="reveal"
+    >
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Experience
+            </span>
+
+            <h2>
+                Where I've worked.
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <!-- 01 BACKEND -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    Dec 2025 – Feb 2026
+                </div>
+
+                <h3>
+                    Backend Developer Intern
+                </h3>
+
+                <div class="timeline-company">
+                    Developers Hub Corporation · Remote
+                </div>
+
+                <p>
+                    Developed backend-focused web applications
+                    using Python and Flask, worked with SQL/database
+                    integration, and used Git and GitHub for
+                    development workflow.
+                </p>
+
+            </div>
+
+
+            <!-- 02 AI -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    Jun 2026 – Sep 2026
+                </div>
+
+                <h3>
+                    AI Specialist Intern
+                </h3>
+
+                <div class="timeline-company">
+                    Glaxit Software House · On-site
+                </div>
+
+                <p>
+                    Worked with machine learning, NLP, AI-based
+                    data processing pipelines, FastAPI APIs,
+                    Docker-based model deployment, automation,
+                    evaluation, and monitoring of AI systems.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section
+        id="projects"
+        class="reveal"
+    >
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Projects
+            </span>
+
+            <h2>
+                Things I've built.
+            </h2>
+
+            <p>
+                A selection of AI, Python, backend, and
+                full-stack projects developed throughout
+                my learning and professional journey.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- =================================================
+                 PROJECT 01
+            ================================================= -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <h3>
+                    Auto Reply AI Chatbot
+                </h3>
+
+                <p>
+                    An AI-powered WhatsApp auto-reply chatbot
+                    that reads conversation context, generates
+                    relevant replies, and automates message
+                    sending.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+
+                    <span>AI</span>
+
+                    <span>Groq</span>
+
+                    <span>PyAutoGUI</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mfahadsaleem001/auto-reply-ai-chatbot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 02
+            ================================================= -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <h3>
+                    Weather Tracking System
+                </h3>
+
+                <p>
+                    A DSA-based weather tracking project focused
+                    on organizing and processing weather-related
+                    data using Python data structures and algorithms.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+
+                    <span>DSA</span>
+
+                    <span>Data Structures</span>
+
+                    <span>Algorithms</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mfahadsaleem001/5th_semster_project_DSA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 03
+            ================================================= -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <h3>
+                    NoteGenius AI — AI Study Assistant
+                </h3>
+
+                <p>
+                    An AI-powered study assistant designed to
+                    process educational notes and help users
+                    understand and summarize learning material
+                    more efficiently.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+
+                    <span>AI</span>
+
+                    <span>NLP</span>
+
+                    <span>Summarization</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mfahadsaleem001/AI-Notes-Summarizer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 04
+            ================================================= -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    04
+                </div>
+
+                <h3>
+                    Employee Manager
+                </h3>
+
+                <p>
+                    A Python-based employee management application
+                    developed to handle employee records and
+                    management operations through a structured
+                    software system.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+
+                    <span>Management System</span>
+
+                    <span>CRUD</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mfahadsaleem001/employee-manager"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 05
+            ================================================= -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    05
+                </div>
+
+                <h3>
+                    NovaCart — E-Commerce Web Application
+                </h3>
+
+                <p>
+                    A full-stack e-commerce web application
+                    developed with Flask, database integration,
+                    authentication, and backend functionality
+                    for managing an online store.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+
+                    <span>Flask</span>
+
+                    <span>SQL</span>
+
+                    <span>Backend</span>
+
+                    <span>E-Commerce</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mfahadsaleem001/NovaCart"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 06
+            ================================================= -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    06
+                </div>
+
+                <h3>
+                    Career Compass AI
+                </h3>
+
+                <p>
+                    An AI-based career planning system designed
+                    to provide structured career guidance,
+                    recommendations, and personalized planning
+                    support.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+
+                    <span>AI</span>
+
+                    <span>Career Planning</span>
+
+                    <span>AI API</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mfahadsaleem001/careercompass-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 07
+            ================================================= -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    07
+                </div>
+
+                <h3>
+                    Novel Scraper & Web-Based Novel Reader
+                </h3>
+
+                <p>
+                    A full-stack web application combining a
+                    Python-based novel scraper with an interactive
+                    web-based reading platform. The system extracts
+                    novel metadata, chapters, and content, then
+                    presents the scraped data through a frontend
+                    built with HTML, CSS, and JavaScript.
+                </p>
+
+                <div class="project-tags">
+
+                    <span>Python</span>
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                    <span>Web Scraping</span>
+
+                    <span>Full Stack</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mfahadsaleem001/Novel-Scraper"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CERTIFICATIONS
+    ===================================================== -->
+
+    <section
+        id="certifications"
+        class="reveal"
+    >
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Certifications
+            </span>
+
+            <h2>
+                Learning & professional milestones.
+            </h2>
+
+        </div>
+
+
+        <div class="cert-grid">
+
+
+            <div class="cert-card">
+
+                <span>
+                    FEB 2026
+                </span>
+
+                <h3>
+                    Backend Development Internship —
+                    Developers Hub Corporation
+                </h3>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <span>
+                    JUL 2026
+                </span>
+
+                <h3>
+                    Introduction to Generative AI —
+                    Google & Claude
+                </h3>
+
+            </div>
+
+
+            <div class="cert-card">
+
+                <span>
+                    SEP 2026
+                </span>
+
+                <h3>
+                    AI Specialist Internship —
+                    Glaxit Software House
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section
+        id="contact"
+        class="reveal"
+    >
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Contact
+            </span>
+
+            <h2>
+                Let's connect.
+            </h2>
+
+            <p>
+                Whether you have an opportunity, collaboration
+                idea, or simply want to discuss technology,
+                feel free to reach out.
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <!-- DIRECT CONTACT -->
+
+            <div class="contact-card">
+
+                <h3>
+                    Get in touch
+                </h3>
+
+                <p>
+                    You can contact me directly through any
+                    of the options below.
+                </p>
+
+
+                <div class="contact-list">
+
+
+                    <a
+                        href="mailto:mfahadsaleem001@gmail.com"
+                        class="contact-link"
+                    >
+
+                        <span class="contact-icon">
+                            ✉
+                        </span>
+
+                        mfahadsaleem001@gmail.com
+
+                    </a>
+
+
+                    <a
+                        href="tel:+923349566487"
+                        class="contact-link"
+                    >
+
+                        <span class="contact-icon">
+                            ☎
+                        </span>
+
+                        +92 334 9566487
+
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/923349566487?text=Hello%20Muhammad%20Fahad"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                    >
+
+                        <span class="contact-icon">
+                            ◉
+                        </span>
+
+                        WhatsApp
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ONLINE PROFILES -->
+
+            <div class="contact-card">
+
+                <h3>
+                    Find me online
+                </h3>
+
+                <p>
+                    Explore my work, projects, and professional profile.
+                </p>
+
+
+                <div class="contact-list">
+
+
+                    <a
+                        href="https://www.linkedin.com/in/muhammad-fahad-saleem-b9788133a"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                    >
+
+                        <span class="contact-icon">
+                            in
+                        </span>
+
+                        LinkedIn
+
+                    </a>
+
+
+                    <a
+                        href="https://github.com/mfahadsaleem001"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                    >
+
+                        <span class="contact-icon">
+                            ◈
+                        </span>
+
+                        GitHub
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
 
     <footer>
-    <p>© <span id="year"></span> Muhammad Fahad Saleem. All Rights Reserved.</p>
-</footer>
-<script>
-const toggle = document.getElementById("themeToggle");
 
-if(localStorage.getItem("theme") === "dark"){
-    document.body.classList.add("dark");
-    toggle.innerHTML="☀️";
-}
+        <div>
 
-toggle.addEventListener("click",function(){
+            ©
+            <span id="year"></span>
+            Muhammad Fahad Saleem.
+            All rights reserved.
 
-    document.body.classList.toggle("dark");
+        </div>
 
-    if(document.body.classList.contains("dark")){
-        toggle.innerHTML="☀️";
-        localStorage.setItem("theme","dark");
-    }
-    else{
-        toggle.innerHTML="🌙";
-        localStorage.setItem("theme","light");
-    }
 
-});
+        <div class="footer-links">
 
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
+            <a
+                href="https://github.com/mfahadsaleem001"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/muhammad-fahad-saleem-b9788133a"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+
+            <a href="#home">
+                Back to top ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           THEME
+        ================================================= */
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const themeIcon =
+            document.getElementById("themeIcon");
+
+
+        function updateThemeIcon() {
+
+            if (
+                document.body.classList.contains("dark")
+            ) {
+
+                /* SUN ICON */
+
+                themeIcon.innerHTML = `
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="4"
+                    ></circle>
+
+                    <path d="M12 2v2"></path>
+
+                    <path d="M12 20v2"></path>
+
+                    <path d="M4.93 4.93l1.41 1.41"></path>
+
+                    <path d="M17.66 17.66l1.41 1.41"></path>
+
+                    <path d="M2 12h2"></path>
+
+                    <path d="M20 12h2"></path>
+
+                    <path d="M4.93 19.07l1.41-1.41"></path>
+
+                    <path d="M17.66 6.34l1.41-1.41"></path>
+
+                `;
+
+            } else {
+
+                /* MOON ICON */
+
+                themeIcon.innerHTML = `
+
+                    <path
+                        d="M21 12.79A9 9 0 1 1 11.21 3
+                        7 7 0 0 0 21 12.79Z"
+                    ></path>
+
+                `;
+
+            }
+
+        }
+
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                document.body.classList.toggle("dark");
+
+                const isDark =
+                    document.body.classList.contains("dark");
+
+                localStorage.setItem(
+                    "portfolio-theme",
+                    isDark
+                        ? "dark"
+                        : "light"
+                );
+
+                updateThemeIcon();
+
+            }
+        );
+
+
+        /*
+           IMPORTANT:
+           Dark mode is DEFAULT.
+           We only switch to light mode if
+           user explicitly clicked the button.
+        */
+
+        updateThemeIcon();
+
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================= */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            });
+
+
+
+        /* =================================================
+           SCROLL REVEAL
+        ================================================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "active"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(
+            element => {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
+
+        /* =================================================
+           CURRENT YEAR
+        ================================================= */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+    </script>
+
+
 </body>
+
 </html>
